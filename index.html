@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="En svensk guide till DgoBuy spreadsheet. Hitta produktkategorier hos HipoBuyFind och jämför storlekar, QC-bilder och frakt innan du beställer.">
+  <meta name="theme-color" content="#223335">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:title" content="DgoBuy spreadsheet – svensk köpguide och produktkategorier">
+  <meta property="og:description" content="Från produktlänk till leverans: så jämför du mått, granskar QC-bilder och räknar på frakten till Sverige.">
+  <title>DgoBuy spreadsheet – svensk köpguide och produktkategorier</title>
+  <!-- Research: Bing's results page could not be read. Ten indexed pages were used to identify search topics, without verification of their Bing positions. -->
+  <style>
+    :root{color-scheme:light;--paper:#f8f5ed;--ink:#223335;--muted:#46585a;--line:#cdd3c9;--light:#e5ebe1;--accent:#f2ce7d}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit;text-underline-offset:.2em}
+    a:focus-visible,summary:focus-visible{outline:3px solid #aa581f;outline-offset:4px}
+    .wrap{width:min(72rem,calc(100% - 2rem));margin-inline:auto}
+    .bar{display:flex;justify-content:space-between;align-items:center;gap:.5rem 1rem;flex-wrap:wrap;padding-block:1rem;font-size:.9rem}
+    .brand{font-weight:800}.bar span{color:var(--muted)}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2{font-family:Georgia,serif;font-weight:500;line-height:1.05;letter-spacing:-.035em}
+    h1{font-size:clamp(2.55rem,6.8vw,5.3rem);overflow-wrap:anywhere}
+    h2{font-size:clamp(1.9rem,4.6vw,3rem);margin-bottom:1rem}
+    h3{font-size:1.1rem;line-height:1.35;margin-bottom:.5rem}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;background:var(--ink);color:var(--paper);overflow:hidden}
+    .hero-copy{padding:clamp(1.35rem,5vw,4rem);align-self:center}
+    .hero-copy p{max-width:52ch;margin-top:1rem;color:#e1e7df}
+    .hero figure{position:relative;min-width:0;background:#e4e7df;min-height:18rem}
+    .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+    .hero figcaption{position:absolute;bottom:.7rem;left:.7rem;background:var(--paper);color:var(--ink);padding:.25rem .6rem;font-size:.8rem}
+    .button{display:inline-block;background:var(--accent);color:var(--ink);font-weight:750;padding:.65rem 1rem;margin-top:1.2rem}
+    section{padding-block:clamp(1.7rem,4vw,3.5rem);border-bottom:1px solid var(--line)}
+    .cats,.gallery{list-style:none;padding:0;margin:0;display:grid;gap:.55rem}
+    .cats{grid-template-columns:repeat(5,minmax(0,1fr))}
+    .cats a{display:flex;align-items:center;height:100%;min-height:3.4rem;padding:.65rem .75rem;background:var(--light);font-weight:650}
+    .cats a:hover{background:var(--accent)}
+    .gallery{grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+    .gallery figure{height:100%;background:#eeede5}
+    .gallery img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+    .gallery .jewel{object-fit:contain;background:#fff}
+    .gallery figcaption{padding:.6rem .75rem;font-size:.88rem}
+    .note{margin-top:.8rem;color:var(--muted);font-size:.9rem}
+    .articles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+    article{border-top:3px solid var(--ink);padding:.9rem .15rem 0}
+    article p+p{margin-top:.65rem}
+    .lede{max-width:70ch;margin-bottom:1.15rem}
+    dl{display:grid;grid-template-columns:minmax(9rem,1fr) 3fr;gap:.3rem 1rem;margin:0}
+    dt,dd{border-top:1px solid var(--line);padding:.65rem 0;margin:0}dt{font-weight:700}
+    details{border-top:1px solid var(--line);padding:.8rem 0}
+    summary{font-weight:750;cursor:pointer}details p{max-width:73ch;padding:.5rem 0 0 1rem}
+    footer{padding-block:1.5rem 2rem;font-size:.9rem}
+    @media(max-width:740px){.hero{grid-template-columns:1fr}.hero figure{min-height:15rem}.cats{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery,.articles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:490px){.articles,dl{grid-template-columns:1fr;gap:.25rem}.articles{gap:1rem}dt{padding-bottom:0}dd{border:0;padding-top:0}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "sv",
+    "name": "DgoBuy spreadsheet – svensk köpguide och produktkategorier",
+    "mainEntity": [
+      {"@type":"Question","name":"Vad är ett DgoBuy spreadsheet?","acceptedAnswer":{"@type":"Answer","text":"Det är en produktlista där du kan samla länkar och jämföra varianter, storlekar och villkor före ett köp. Den här guiden länkar till HipoBuyFinds kategorier."}},
+      {"@type":"Question","name":"Vad ska jag kontrollera om en produktlänk har ändrats?","acceptedAnswer":{"@type":"Answer","text":"Öppna den aktuella annonsen och jämför säljare, modellnummer, variant och mått med dina anteckningar. Uppdatera raden först när uppgifterna stämmer."}},
+      {"@type":"Question","name":"Vad visar QC-bilder från lagret?","acceptedAnswer":{"@type":"Answer","text":"De visar synliga detaljer på varan som fotograferats. Be om närbilder eller ett foto med måttband om färg, sömmar eller passform är svåra att bedöma."}},
+      {"@type":"Question","name":"Hur uppskattar jag totalpriset till Sverige?","acceptedAnswer":{"@type":"Answer","text":"Räkna ihop varans pris, inrikes och internationell frakt, växlings- och betalningsavgifter samt eventuell importmoms, tull och hanteringsavgift. Kontrollera vad som redan ingår i offerten."}}
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/injzd/">
+</head>
+<body>
+  <header class="wrap bar">
+    <a class="brand" href="https://www.hipobuyfind.com">www.hipobuyfind.com</a>
+    <span>Svensk köpguide</span>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <div class="hero-copy">
+        <h1>DgoBuy spreadsheet</h1>
+        <p>Jämför produktlänkar, storlekar och frakt innan du beställer. Välj en kategori hos HipoBuyFind och använd guiden för att kontrollera annonsen, varan och kostnaden till Sverige.</p>
+        <a class="button" href="https://www.hipobuyfind.com">Öppna HipoBuyFind</a>
+      </div>
+      <figure>
+        <img src="https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d%2Cc_scale%2Cfl_relative%2Cw_1.0%2Ch_1.0%2Cfl_layer_apply/34dc620c-8c7b-42b5-bd3c-0c6c42c6ff2b/W%2BAIR%2BFORCE%2B1%2B%2707%2BNEXT%2BNATURE.png" width="592" height="592" fetchpriority="high" alt="Vit Nike Air Force 1 ’07 Next Nature sedd från sidan">
+        <figcaption>Nike Air Force 1</figcaption>
+      </figure>
+    </div>
+
+    <section aria-labelledby="kategorier">
+      <h2 id="kategorier">Produktkategorier</h2>
+      <nav aria-label="Produktkategorier hos HipoBuyFind">
+        <ul class="cats">
+          <li><a href="https://hipobuyfind.com/category-911-Shoes.html">Skor</a></li>
+          <li><a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Huvtröjor och tröjor</a></li>
+          <li><a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-shirts</a></li>
+          <li><a href="https://hipobuyfind.com/category-914-Jackets.html">Jackor</a></li>
+          <li><a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Byxor och shorts</a></li>
+          <li><a href="https://hipobuyfind.com/category-916-Headwear.html">Huvudbonader</a></li>
+          <li><a href="https://hipobuyfind.com/category-917-Sets.html">Klädset</a></li>
+          <li><a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Underkläder</a></li>
+          <li><a href="https://hipobuyfind.com/category-919-Jersey.html">Matchtröjor</a></li>
+          <li><a href="https://hipobuyfind.com/category-920-Accessories.html">Accessoarer</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <section aria-labelledby="bilder">
+      <h2 id="bilder">Material och detaljer</h2>
+      <ul class="gallery">
+        <li><figure><img src="https://cdn.clothbase.com/uploads/938c5e03-15ae-4a1a-9341-3dba06f4274b/P00583878_b2.jpg" width="400" height="500" loading="lazy" decoding="async" alt="Modell i svart Gucci-jacka med dragkedja"><figcaption>Gucci · jackans krage och avslut</figcaption></figure></li>
+        <li><figure><img src="https://assets.vogue.com/photos/6a3b78024786d6e0bbaac170/master/w_400%2Cc_limit/00009-louis-vuitton-spring-2027-menswear-details-credit-gorunway.jpg" width="400" height="500" loading="lazy" decoding="async" alt="Mörk Louis Vuitton-keps med monogram på en modell"><figcaption>Louis Vuitton · kepsens skärm och form</figcaption></figure></li>
+        <li><figure><img class="jewel" src="https://cdn.theluxurycloset.com/uploads/products/750x750/luxury-women-hermes-used-accessories-p718595-002.jpg" width="400" height="500" loading="lazy" decoding="async" alt="Hermès Clic H-armband med svart emalj och guldfärgat beslag"><figcaption>Hermès · armbandets lås</figcaption></figure></li>
+        <li><figure><img class="jewel" src="https://before-images-item.croketglobal.net/item/thumbnail/80d3191722a296e41551dfad2ca1b1a4.webp" width="400" height="500" loading="lazy" decoding="async" alt="Dior Tribales-örhängen med pärlliknande kulor i två storlekar"><figcaption>Dior · örhängenas fram- och baksida</figcaption></figure></li>
+      </ul>
+      <p class="note">Bilderna illustrerar design och material. Guiden är fristående från DgoBuy och de avbildade varumärkena.</p>
+    </section>
+
+    <section aria-labelledby="guide">
+      <h2 id="guide">Från produktlänk till leverans</h2>
+      <p class="lede">Använd ett DgoBuy spreadsheet som inköpslista. Spara en rad per variant så att du kan jämföra annonsen med beställningen även om säljaren byter bilder eller namn på färgen.</p>
+      <div class="articles">
+        <article>
+          <h3>Hitta rätt produktlänk</h3>
+          <p>Om du hittar en vara på Taobao, Pinduoduo eller JD.com, kontrollera först om köpagenten kan hantera länken. Spara säljarens produktnummer, modellnamn, färgkod och datumet då du kontrollerade annonsen.</p>
+          <p>För sneakers kan du jämföra innersulans längd med ett par som passar. För huvtröjor och jackor är plaggets bröstvidd och ärmlängd ofta mer användbara än storleksbokstaven. Kontrollera om säljarens storlekstabell visar plaggets mått eller kroppsmått.</p>
+        </article>
+        <article>
+          <h3>Granska QC-bilder från lagret</h3>
+          <p>Jämför lagerfotot med din sparade variant. På skor kan du be om en bild av båda sulorna. På en matchtröja kan du kontrollera tryckets placering. För en keps eller ett smycke kan du be om närbilder på spännet eller låset.</p>
+          <p>Behöver du byta storlek eller reklamera en synlig skada? Kontrollera returvillkoren och säljarens tidsfrist innan du godkänner internationell frakt. För varumärkesprodukter bör du kontrollera ursprung och underlag för äkthet separat.</p>
+        </article>
+        <article>
+          <h3>Jämför frakt till Sverige</h3>
+          <p>Be om paketets vikt och mått innan du jämför fraktalternativ. En stor skokartong kan påverka kostnaden om transportören räknar med volymvikt. Vid samfrakt bör du be om en ny offert efter ompackning.</p>
+          <p>Skriv ner växelkurs, betalningsavgift och fraktkostnad i samma valuta. Kontrollera även spårning, transportörens villkor och vilka avgifter som kan tillkomma när paketet kommer fram.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="inkopslista">
+      <h2 id="inkopslista">Fält för din inköpslista</h2>
+      <dl>
+        <dt>Annons</dt><dd>Produktlänk, marknadsplats, säljarnamn, modellnummer, datum för länkkontroll.</dd>
+        <dt>Variant</dt><dd>Färgkod, vald storlek, innersulans längd, bröstvidd, midjemått, ärmlängd, material.</dd>
+        <dt>Lagerkontroll</dt><dd>QC-bilder, antal, sömmar, tryck, spänne, synliga skador, sista returdag.</dd>
+        <dt>Leverans</dt><dd>Varans pris, växelkurs, betalningsavgift, inrikesfrakt, paketmått, volymvikt, samfrakt, spårning, importmoms och totalpris i SEK.</dd>
+      </dl>
+    </section>
+
+    <section aria-labelledby="faq">
+      <h2 id="faq">Vanliga frågor</h2>
+      <details open><summary>Vad är ett DgoBuy spreadsheet?</summary><p>Det är en produktlista där du kan samla länkar och jämföra varianter, storlekar och villkor före ett köp. Den här guiden länkar till HipoBuyFinds kategorier.</p></details>
+      <details><summary>Vad ska jag kontrollera om en produktlänk har ändrats?</summary><p>Öppna den aktuella annonsen och jämför säljare, modellnummer, variant och mått med dina anteckningar. Uppdatera raden först när uppgifterna stämmer.</p></details>
+      <details><summary>Vad visar QC-bilder från lagret?</summary><p>De visar synliga detaljer på varan som fotograferats. Be om närbilder eller ett foto med måttband om färg, sömmar eller passform är svåra att bedöma.</p></details>
+      <details><summary>Hur uppskattar jag totalpriset till Sverige?</summary><p>Räkna ihop varans pris, inrikes och internationell frakt, växlings- och betalningsavgifter samt eventuell importmoms, tull och hanteringsavgift. Kontrollera vad som redan ingår i offerten.</p></details>
+    </section>
+  </main>
+
+  <footer class="wrap"><a href="https://www.hipobuyfind.com">Till HipoBuyFind</a></footer>
+</body>
+</html>
